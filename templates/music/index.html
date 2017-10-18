@@ -1,0 +1,16 @@
+<ul style="background-color: aqua">
+
+
+
+
+
+{% if myAlbums %}
+    <h1><p> Browse songs by artist:</p></h1>
+    {% for album in myAlbums %}
+    <li><a href="/home/music/{{ album.id}}">{{ album.artist }}</a>
+    {% endfor %}
+{% else %}
+    <h1>You have no Albums yet</h1>
+    </li>
+{% endif %}
+</ul>
