@@ -3,7 +3,7 @@ from django.db import models
 class Albums(models.Model):
     artist=models.CharField(max_length=270)
     year=models.CharField(max_length=255)
-    logo=models.CharField(max_length=200)
+    logo=models.ImageField(null=True,blank=True)
     genre=models.CharField(max_length=290)
     name=models.CharField(max_length=200, default='')
 

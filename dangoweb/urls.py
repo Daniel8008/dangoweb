@@ -14,11 +14,16 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
 from django.conf.urls import include, url, patterns
+from django.conf.urls.static import static
 from django.contrib import admin
+
+from dangoweb import settings
 from music.views import index,detail
 
 urlpatterns = patterns( '',url(r'^admin/', include(admin.site.urls)),
     url(r'^home/$', index),
     url(r'^home/music/(\d{1,3})$',detail)
-)
+) + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+
+
 
